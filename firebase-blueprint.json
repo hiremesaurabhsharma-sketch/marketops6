@@ -1,0 +1,59 @@
+{
+  "entities": {
+    "Inquiry": {
+      "title": "Inquiry",
+      "description": "A contact submission request stored in Firestore",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the inquiry"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full name of the user"
+        },
+        "email": {
+          "type": "string",
+          "description": "Contact email address"
+        },
+        "phone": {
+          "type": "string",
+          "description": "Phone number"
+        },
+        "businessName": {
+          "type": "string",
+          "description": "Name of the business"
+        },
+        "service": {
+          "type": "string",
+          "description": "Service of interest"
+        },
+        "monthlyBudget": {
+          "type": "string",
+          "description": "Estimated monthly marketing budget"
+        },
+        "message": {
+          "type": "string",
+          "description": "Custom query details"
+        },
+        "userId": {
+          "type": "string",
+          "description": "UID of the authenticated creator"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of creation"
+        }
+      },
+      "required": ["name", "email", "phone", "businessName", "service", "monthlyBudget", "userId", "createdAt"]
+    }
+  },
+  "firestore": {
+    "inquiries/{inquiryId}": {
+      "schema": "Inquiry",
+      "description": "Collection of contact inquiries submitted by authenticated users"
+    }
+  }
+}

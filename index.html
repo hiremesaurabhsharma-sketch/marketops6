@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#020203" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>MarketOps Marketing Solutions | Performance & Digital Growth Agency</title>
+  <link rel="stylesheet" href="./style.css" />
+  <!-- Font Awesome or unpkg Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Cursor Glow Effect -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- Background Animated Blur Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Loading Animation Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Premium Sticky Header Navbar -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <span class="logo-dot"></span>
+          MarketOps
+        </a>
+        
+        <nav>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item-dropdown">
+              <a href="services.html" class="nav-link dropdown-toggle">Services <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="ecommerce.html" class="dropdown-link">Ecommerce Solutions</a></li>
+                <li><a href="performance-marketing.html" class="dropdown-link">Performance Marketing</a></li>
+                <li><a href="website-development.html" class="dropdown-link">Website & Development</a></li>
+                <li><a href="seo.html" class="dropdown-link">SEO Optimization</a></li>
+                <li><a href="marketing-creative.html" class="dropdown-link">Marketing Creative</a></li>
+                <li><a href="overseas-business.html" class="dropdown-link">Overseas Business Dev</a></li>
+              </ul>
+            </li>
+            <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="md:hidden mt-4">
+              <a href="contact.html" class="btn btn-primary w-full">Book Free Consultation</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+          <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-wrapper">
+        <div class="hero-content reveal">
+          <div class="hero-tag">A New Era of Scaling</div>
+          <h1 class="hero-title">
+            <span>Performance Marketing</span> & Digital Growth Systems for Brands That Want to Scale
+          </h1>
+          <p class="hero-desc">
+            We help progressive brands grow through ecommerce solutions, performance ads, data-driven SEO, premium high-converting creative, custom web experiences, and international growth planning.
+          </p>
+          <div class="hero-btns">
+            <a href="contact.html" class="btn btn-primary">
+              Book Free Consultation <i data-lucide="arrow-right"></i>
+            </a>
+            <a href="services.html" class="btn btn-secondary">Explore Services</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-glow-sphere"></div>
+          
+          <!-- Floating UI Metrics Cards -->
+          <div class="float-card fc-1">
+            <div class="fc-num" data-target="500+">500+</div>
+            <div class="fc-lbl">Active Brands Scaled</div>
+          </div>
+          
+          <div class="float-card fc-2">
+            <div class="fc-num" data-target="$6M+">$6M+</div>
+            <div class="fc-lbl">Monthly Managed Ad Spend</div>
+          </div>
+          
+          <div class="float-card fc-3">
+            <div class="fc-num" data-target="100+">100+</div>
+            <div class="fc-lbl">Global Brands Launched</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Logomark Marquee Section -->
+  <div class="marquee-container">
+    <p class="marquee-title">Trusted by Fast-Growing Market Leaders Across the Globe</p>
+    <div class="marquee">
+      <div class="marquee-content">
+        <span class="marquee-item"><i data-lucide="shopping-bag"></i> Shopify Plus</span>
+        <span class="marquee-item"><i data-lucide="sparkles"></i> Meta Business Partner</span>
+        <span class="marquee-item"><i data-lucide="award"></i> Google Premier Partner</span>
+        <span class="marquee-item"><i data-lucide="trending-up"></i> Amazon Selling Partner</span>
+        <span class="marquee-item"><i data-lucide="globe"></i> TikTok Partner Network</span>
+        <span class="marquee-item"><i data-lucide="layers"></i> Stripe Verified</span>
+        
+        <!-- Duplicated items to complete seamless loop -->
+        <span class="marquee-item"><i data-lucide="shopping-bag"></i> Shopify Plus</span>
+        <span class="marquee-item"><i data-lucide="sparkles"></i> Meta Business Partner</span>
+        <span class="marquee-item"><i data-lucide="award"></i> Google Premier Partner</span>
+        <span class="marquee-item"><i data-lucide="trending-up"></i> Amazon Selling Partner</span>
+        <span class="marquee-item"><i data-lucide="globe"></i> TikTok Partner Network</span>
+        <span class="marquee-item"><i data-lucide="layers"></i> Stripe Verified</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Preview Section -->
+  <section class="section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-intro reveal">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title">The Engineering Behind Your Profitable Scale</h2>
+          <p class="section-subtitle" style="margin-bottom: 2rem;">
+            MarketOps is not simply a marketing agency. We are a collection of mathematicians, media buyers, product engineers, and creative content minds united with one objective: compounding your brand valuation through systematic, predictable digital scale.
+          </p>
+          <a href="about.html" class="btn btn-secondary">Our Leadership Story</a>
+        </div>
+
+        <div class="why-features">
+          <div class="why-item reveal">
+            <div class="why-icon"><i data-lucide="database"></i></div>
+            <div>
+              <h3 class="why-title">Data-Backed Insights</h3>
+              <p class="why-desc">We scrap guesswork. Every campaign is modeled around unit economics, margin retention, and user lifetime values (LTV).</p>
+            </div>
+          </div>
+          
+          <div class="why-item reveal">
+            <div class="why-icon"><i data-lucide="zap"></i></div>
+            <div>
+              <h3 class="why-title">High Speed Execution</h3>
+              <p class="why-desc">We launch, test, and pivot iterations in real-time. Speed is our primary competitive moat.</p>
+            </div>
+          </div>
+
+          <div class="why-item reveal">
+            <div class="why-icon"><i data-lucide="globe"></i></div>
+            <div>
+              <h3 class="why-title">Global Outlets</h3>
+              <p class="why-desc">Expand beyond domestic territories seamlessly. We scale your logistics, localized payments, and ad systems globally.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Overview Grid -->
+  <section class="section" style="background-color: var(--soft-background); border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head reveal" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">Our Growth Capabilities</span>
+        <h2 class="section-title">Omnichannel Digital Domination Engines</h2>
+        <p class="section-subtitle">A integrated suite of performance marketing models styled to build high returning digital equity.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- 1. Ecommerce Solutions -->
+        <div class="glass-card service-card reveal">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="shopping-cart"></i></div>
+            <h3 class="sc-title">Ecommerce Solutions</h3>
+            <p class="sc-desc">End-to-end management from store blueprinting, customer acquisition, inventory strategies, directly down to marketplace distribution.</p>
+          </div>
+          <a href="ecommerce.html" class="sc-link">Explore Systems <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 2. Performance Marketing -->
+        <div class="glass-card service-card reveal">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="bar-chart-3"></i></div>
+            <h3 class="sc-title">Performance Marketing</h3>
+            <p class="sc-desc">Hyper-targeted media buying on Meta, Google, LinkedIn, and DSPs that prioritizes positive ROI and strict acquisition budgets.</p>
+          </div>
+          <a href="performance-marketing.html" class="sc-link">Explore Systems <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 3. Website Development -->
+        <div class="glass-card service-card reveal">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="code"></i></div>
+            <h3 class="sc-title">Website Development</h3>
+            <p class="sc-desc">Blazing-fast, custom code, headless, or Shopify structures built with a rigid priority on conversion percentage and UX mechanics.</p>
+          </div>
+          <a href="website-development.html" class="sc-link">Explore Systems <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 4. SEO -->
+        <div class="glass-card service-card reveal">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="search"></i></div>
+            <h3 class="sc-title">SEO Optimization</h3>
+            <p class="sc-desc">Earn organic dominance. Authority building, structured data optimization, and keyword capture engineered to bypass dry PPC costs.</p>
+          </div>
+          <a href="seo.html" class="sc-link">Explore Systems <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 5. Marketing Creative -->
+        <div class="glass-card service-card reveal">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="palette"></i></div>
+            <h3 class="sc-title">Marketing Creative</h3>
+            <p class="sc-desc">High production ad creatives, conversion assets, product photography, and visual communication built with psychological triggers.</p>
+          </div>
+          <a href="marketing-creative.html" class="sc-link">Explore Systems <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 6. Overseas Business Dev -->
+        <div class="glass-card service-card reveal">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="globe-2"></i></div>
+            <h3 class="sc-title">Overseas Business Dev</h3>
+            <p class="sc-desc">Break geographic gates. Enter legal frameworks and generate massive conversion nodes in international consumer territories.</p>
+          </div>
+          <a href="overseas-business.html" class="sc-link">Explore Systems <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Counters Section -->
+  <section class="section stats-container">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="500+">500+</div>
+          <div class="stat-label">Active Global Clients</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="$6M+">$6M+</div>
+          <div class="stat-label">Monthly Direct Ad Spend</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="1000+">1000+</div>
+          <div class="stat-label">Verified Case Studies Completed</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="stat-num" data-target="100+">100+</div>
+          <div class="stat-label">Cross-Border Brands Launched</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Preview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-tag">Success Stories</span>
+        <h2 class="section-title">Engineered Revenue Explosions</h2>
+        <p class="section-subtitle">Real metrics, real scale, audited results. This is how we transform brands into market rulers.</p>
+      </div>
+
+      <div class="case-grid">
+        <!-- Case 1 -->
+        <div class="case-card reveal" onclick="window.location.href='case-studies.html'">
+          <div class="case-img-container">
+            <div class="case-img-placeholder">
+              <i data-lucide="trending-up" style="width: 80px; height: 80px; color: var(--accent-green);"></i>
+              <p style="margin-top: 1rem; font-family: var(--font-display); font-weight: 700;">VISUAL PERFORMANCE INSIGHT</p>
+            </div>
+          </div>
+          <div class="case-overlay">
+            <div class="case-tag">D2C Ecommerce Scale</div>
+            <h3 class="case-title">Scaling an Apparel Empire to 8-Figures</h3>
+            <div class="case-stat">
+              <i data-lucide="trending-up"></i>
+              <span>380% ROAS Improvement | $450k/mo Revenue Grid</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card reveal" onclick="window.location.href='case-studies.html'">
+          <div class="case-img-container">
+            <div class="case-img-placeholder">
+              <i data-lucide="globe" style="width: 80px; height: 80px; color: var(--accent-cyan);"></i>
+              <p style="margin-top: 1rem; font-family: var(--font-display); font-weight: 700;">CROSS BORDER LOGISTICS SCALE</p>
+            </div>
+          </div>
+          <div class="case-overlay">
+            <div class="case-tag">Enterprise Lead Optimization</div>
+            <h3 class="case-title">Overseas Expansion Strategy for SaaS Suite</h3>
+            <div class="case-stat">
+              <i data-lucide="zap"></i>
+              <span>12,000+ Verified Qualified Leads | 4.2x CAC Arbitrage</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 4rem;" class="reveal">
+        <a href="case-studies.html" class="btn btn-secondary">View All Active Performance Case Studies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section" style="background-color: var(--soft-background); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head reveal" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">Direct Feedback</span>
+        <h2 class="section-title">What Our Global Partners Say</h2>
+        <p class="section-subtitle">We build long-term systems of trust. Here is what leading brand executives state about our team.</p>
+      </div>
+
+      <div class="testimonial-grid">
+        <!-- Testimonial 1 -->
+        <div class="glass-card testimonial-card reveal">
+          <p class="t-text">
+            "MarketOps didn't just run ads; they restructured our complete margin funnel. Their marketplace management strategies pushed us to #1 in our category on Amazon within exactly five months."
+          </p>
+          <div class="t-author">
+            <div class="t-avatar">RB</div>
+            <div>
+              <h4 class="t-name">Rajesh Bhatia</h4>
+              <p class="t-role">Founder, Aura Organics</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="glass-card testimonial-card reveal">
+          <p class="t-text">
+            "We were stuck at a plateau for 18 months spending $40k/month on Google Ads. MarketOps retooled our keyword maps and launched high-impact creatives which lowered our blended CPA by 44%."
+          </p>
+          <div class="t-author">
+            <div class="t-avatar">SK</div>
+            <div>
+              <h4 class="t-name">Sophia Kincaid</h4>
+              <p class="t-role">Chief Marketing Officer, Finova Inc.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="glass-card testimonial-card reveal">
+          <p class="t-text">
+            "Expanding into Southeast Asia felt incredibly risky due to physical distribution barriers. MarketOps' overseas expansion network set up our channels, handled customs, and got us 80,000+ buyers."
+          </p>
+          <div class="t-author">
+            <div class="t-avatar">AL</div>
+            <div>
+              <h4 class="t-name">Aravind Logan</h4>
+              <p class="t-role">Director of Growth, CoreFit Active</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section (Accordions) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">Answering Common Inquiries</span>
+        <h2 class="section-title">Scaling Framework FAQs</h2>
+        <p class="section-subtitle">Read how our agency handles scaling processes, onboarding, and commercial terms.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What makes MarketOps different from typical digital agencies?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Unlike standard agencies who bill strictly for hourly setup and focus on vanity impressions, MarketOps scales on direct, margin-retaining, performance numbers. We link our performance dashboards directly to your SKU-level gross margins, ensuring you generate net-profitable scale rather than empty top-line revenue.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do we have to commit to long-term multi-year contracts?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>No. We operate with a standard 90-day onboarding foundation, followed by a flexible month-to-month agreement. We believe our performance is the ultimate retention engine; we earn your business each active month.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Does MarketOps handle both marketplace and direct website D2C growth?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. Our solutions cover both direct-to-consumer websites (using Shopify, Custom Headless frameworks, etc.) as well as marketplaces including Amazon, Myntra, Blinkit, and international commerce platforms. This ensures true omnichannel coverage and protects your SKU distributions.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How fast can we see visible shifts in ad and organic accounts?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>For pay-per-click performance marketing and marketplace optimizations, we typically see account health shifts and CPA reductions within the first 14 to 21 campaign days. Organic SEO structures require 60 to 90 days of content and crawl indexation to establish permanent growth.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container reveal">
+    <div class="cta-section">
+      <div class="cta-bg"></div>
+      <div class="cta-glow-ring"></div>
+      <div class="cta-content">
+        <span class="section-tag" style="margin-bottom: 1.5rem;">Take Action Today</span>
+        <h2 class="cta-title">Ready to Fuel Your <span>Profitable Growth Core?</span></h2>
+        <p class="cta-desc">
+          Stop bleeding precious budget on ineffective marketing agencies. Receive a highly actionable market mapping and account audit from our senior growth engineers for free.
+        </p>
+        <a href="contact.html" class="btn btn-lime">
+          Schedule Free Scaling Audit <i data-lucide="calendar"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Premium Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-dot"></span>
+            MarketOps
+          </a>
+          <p class="footer-tagline">
+            Systematic physical and digital omnichannel scaling models for high-end modern consumer brands.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-circle" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-circle" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Capability Nodes</h4>
+          <ul class="footer-links">
+            <li><a href="ecommerce.html" class="footer-link">Ecommerce Solutions</a></li>
+            <li><a href="performance-marketing.html" class="footer-link">Performance Marketing</a></li>
+            <li><a href="website-development.html" class="footer-link">Web Development</a></li>
+            <li><a href="seo.html" class="footer-link">SEO Dominance</a></li>
+            <li><a href="marketing-creative.html" class="footer-link">Creative Assets</a></li>
+            <li><a href="overseas-business.html" class="footer-link">Global Expansion</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Agency Details</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">Leadership & Story</a></li>
+            <li><a href="services.html" class="footer-link">All Growth Services</a></li>
+            <li><a href="case-studies.html" class="footer-link">Case Research Library</a></li>
+            <li><a href="contact.html" class="footer-link">Onboarding Hub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Growth Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Careers <span style="font-size: 0.75rem; color: var(--accent-green);">[WE ARE HIRING]</span></a></li>
+            <li><a href="#" class="footer-link">Affiliate Model</a></li>
+            <li><a href="#" class="footer-link">Ecom Academy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Direct Connection</h4>
+          <div class="footer-contact-info">
+            <p>Available 24/7 for Enterprise partners.</p>
+            <p><i data-lucide="mail" style="display:inline-block; width:14px; margin-right:4px;"></i> <a href="mailto:connect@marketops.in">connect@marketops.in</a></p>
+            <p><i data-lucide="message-square" style="display:inline-block; width:14px; margin-right:4px;"></i> <a href="https://wa.me/919424995426" target="_blank">Chat with Growth Advisor</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MarketOps Marketing Solutions Private Limited. All licensing coordinates strictly observed.</p>
+        <div class="footer-bottom-links">
+          <a href="policy.html" class="footer-bottom-link">Privacy Policy</a>
+          <a href="policy.html" class="footer-bottom-link">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

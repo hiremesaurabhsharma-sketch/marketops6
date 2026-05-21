@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#020203" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Ecommerce Solutions | MarketOps Marketing Solutions</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div id="loader" class="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Header Navbar -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <span class="logo-dot"></span>
+          MarketOps
+        </a>
+        
+        <nav>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item-dropdown">
+              <a href="services.html" class="nav-link dropdown-toggle">Services <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="ecommerce.html" class="dropdown-link">Ecommerce Solutions</a></li>
+                <li><a href="performance-marketing.html" class="dropdown-link">Performance Marketing</a></li>
+                <li><a href="website-development.html" class="dropdown-link">Website & Development</a></li>
+                <li><a href="seo.html" class="dropdown-link">SEO Optimization</a></li>
+                <li><a href="marketing-creative.html" class="dropdown-link">Marketing Creative</a></li>
+                <li><a href="overseas-business.html" class="dropdown-link">Overseas Business Dev</a></li>
+              </ul>
+            </li>
+            <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="md:hidden mt-4">
+              <a href="contact.html" class="btn btn-primary w-full">Book Free Consultation</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+          <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="subpage-hero-grid">
+        <div class="subpage-hero-content reveal">
+          <span class="section-tag">Marketplace Execution Nodes</span>
+          <h1 class="hero-title">From Store Setup <span>to Sales Growth</span> — We Handle Everything</h1>
+          <p class="hero-desc">
+            Stop struggling with listing rejections and skyrocketing PPC costs. We engineer a fully managed channel model that handles cataloging, pricing, search visibility, and performance scaling.
+          </p>
+          <div class="partner-marquee">
+            <span>Partner Integration:</span>
+            <span class="partner-tag">Amazon</span> | 
+            <span class="partner-tag">Flipkart</span> | 
+            <span class="partner-tag">Myntra</span> | 
+            <span class="partner-tag">Meesho</span> | 
+            <span class="partner-tag">Blinkit</span> | 
+            <span class="partner-tag">Zepto</span> | 
+            <span class="partner-tag">Instamart</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-glow-sphere" style="background: radial-gradient(circle, rgba(0, 255, 132, 0.15) 0%, transparent 100%);"></div>
+          <div class="glass-card" style="width: 100%; max-width: 400px; padding: 2rem;">
+            <h3 style="font-family:var(--font-display); font-weight:800; font-size:1.5rem; margin-bottom:1rem; color:var(--accent-green);"><i data-lucide="trending-up" style="display:inline-block; vertical-align:middle; margin-right:8px;"></i> Channel Dominance</h3>
+            <p class="why-desc" style="margin-bottom:1.5rem;">Managing omnichannel listings, physical logistics flows, and active ad budgets under a unified dashboard.</p>
+            <div style="border-top:1px solid var(--border); padding-top:1rem; display:flex; justify-content:space-between;">
+              <div>
+                <span style="font-size: 0.8rem; text-transform:uppercase; color:var(--text-muted);">Avg ROAS</span>
+                <h4 style="font-size:1.5rem; font-weight:800; color:#fff;">4.8x</h4>
+              </div>
+              <div>
+                <span style="font-size: 0.8rem; text-transform:uppercase; color:var(--text-muted);">Managed Volume</span>
+                <h4 style="font-size:1.5rem; font-weight:800; color:#fff;">$20M+</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem / Solution Split Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="challenge-solution-split">
+        <!-- Challenges (Red indicator bar) -->
+        <div class="reveal">
+          <div class="collapsible-header">
+            <span style="color: #ef4444; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing:0.1em;">Current Obstacles</span>
+            <h2 class="section-title" style="margin-top: 0.5rem; font-size: 2.25rem;">Marketplace Obstacles</h2>
+          </div>
+          <p class="why-desc" style="margin-bottom: 2.5rem;">Brands entering massive marketplaces find themselves immediately buried by intense competitor pricing and poor search visibility.</p>
+          
+          <div class="list-challenges">
+            <div class="challenge-item">
+              <span class="challenge-num">01</span>
+              <div class="challenge-text">
+                <h4>Low Product Visibility</h4>
+                <p class="why-desc">Your products are buried on page 10 of searches, completely invisible to potential buyers.</p>
+              </div>
+            </div>
+
+            <div class="challenge-item">
+              <span class="challenge-num">02</span>
+              <div class="challenge-text">
+                <h4>Poor Ad Performance & High ACOS</h4>
+                <p class="why-desc">Sinking severe ad budgets into marketplace PPC with little to no return on ad spend.</p>
+              </div>
+            </div>
+
+            <div class="challenge-item">
+              <span class="challenge-num">03</span>
+              <div class="challenge-text">
+                <h4>Listing Optimization Issues</h4>
+                <p class="why-desc">Unoptimized descriptions, title keywords, and bullet points leading to low search relevancy.</p>
+              </div>
+            </div>
+
+            <div class="challenge-item">
+              <span class="challenge-num">04</span>
+              <div class="challenge-text">
+                <h4>Inventory & Stock Management Problems</h4>
+                <p class="why-desc">Understocking leading to severe listing de-rankings, or overstocking leading to high warehouse storage fees.</p>
+              </div>
+            </div>
+
+            <div class="challenge-item">
+              <span class="challenge-num">05</span>
+              <div class="challenge-text">
+                <h4>Buy Box & Pricing Challenges</h4>
+                <p class="why-desc">Continuous pricing wars and reseller hijackings causing you to lose the Buy Box checkout module.</p>
+              </div>
+            </div>
+
+            <div class="challenge-item">
+              <span class="challenge-num">06</span>
+              <div class="challenge-text">
+                <h4>Account Growth Stagnation</h4>
+                <p class="why-desc">Account revenues flatlining due to unoptimized systems, catalog issues, or lack of brand identity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solutions (Green indicator bar) -->
+        <div class="reveal">
+          <div class="success-header">
+            <span style="color: var(--accent-green); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing:0.1em;">Our Growth Remediation</span>
+            <h2 class="section-title" style="margin-top: 0.5rem; font-size: 2.25rem;">The Solution Arsenal</h2>
+          </div>
+          <p class="why-desc" style="margin-bottom: 2.5rem;">We provide a comprehensive, fully-managed approach to marketplace operations that drives sustainable, high-margin revenue scale.</p>
+
+          <div class="list-solutions">
+            <div class="solution-item">
+              <span class="solution-num">01</span>
+              <div class="solution-text">
+                <h4>Marketplace Account Audit</h4>
+                <p class="why-desc">Comprehensive analysis of listings, pricing, organic indexation, and ad accounts to locate margin leakages.</p>
+              </div>
+            </div>
+
+            <div class="solution-item">
+              <span class="solution-num">02</span>
+              <div class="solution-text">
+                <h4>Listing & SEO Optimization</h4>
+                <p class="why-desc">Advanced title mapping, A+ content, bullet point keyword density, and search node indexing to scale organic traffic.</p>
+              </div>
+            </div>
+
+            <div class="solution-item">
+              <span class="solution-num">03</span>
+              <div class="solution-text">
+                <h4>PPC Campaign Management</h4>
+                <p class="why-desc">Bid modeling, negative keyword harvesting, and product targeting to lower ACOS and protect product conversions.</p>
+              </div>
+            </div>
+
+            <div class="solution-item">
+              <span class="solution-num">04</span>
+              <div class="solution-text">
+                <h4>Inventory & Pricing Strategy</h4>
+                <p class="why-desc">Dynamically adjusted buy box models and stocking notifications to ensure optimal warehouse supply levels.</p>
+              </div>
+            </div>
+
+            <div class="solution-item">
+              <span class="solution-num">05</span>
+              <div class="solution-text">
+                <h4>Conversion & Brand Growth</h4>
+                <p class="why-desc">Setting up dedicated brand stores, customized imagery, and emotional visual cards designed to increase conversion rates.</p>
+              </div>
+            </div>
+
+            <div class="solution-item">
+              <span class="solution-num">06</span>
+              <div class="solution-text">
+                <h4>Scaling & Performance Monitoring</h4>
+                <p class="why-desc">Comprehensive reporting with direct catalog dashboarding to track SKU velocity in real-time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section" style="background-color: var(--soft-background); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="section-head reveal text-center" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">Core Value Proposition</span>
+        <h2 class="section-title">The Commercial Benefits</h2>
+        <p class="section-subtitle">Why leading global manufacturers outsource their marketplace listings directly to MarketOps.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="glass-card benefit-card reveal">
+          <div class="benefit-icon"><i data-lucide="shield-check"></i></div>
+          <h3 class="benefit-title">Brand & IP Defense</h3>
+          <p class="why-desc">We clean hijackers off listings, register trademarks, block rogue resellers, and maintain Buy Box dominance systematically.</p>
+        </div>
+
+        <div class="glass-card benefit-card reveal">
+          <div class="benefit-icon"><i data-lucide="database"></i></div>
+          <h3 class="benefit-title">Supply Chain Sync</h3>
+          <p class="why-desc">Never run out of inventory. We link ad bidding algorithms directly to physical warehouse stock levels, lowering bid priority if stock falls.</p>
+        </div>
+
+        <div class="glass-card benefit-card reveal">
+          <div class="benefit-icon"><i data-lucide="git-branch"></i></div>
+          <h3 class="benefit-title">Instant Listings</h3>
+          <p class="why-desc">Get fast-track approvals. Our relationships with category leads allow me to launch products and get listings active in record time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <span class="section-tag">Direct Evaluation</span>
+        <h2 class="section-title">Partner Verdicts</h2>
+        <p class="section-subtitle">Real results achieved by our specialized Marketplace management teams.</p>
+      </div>
+
+      <div class="testimonial-grid" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto;">
+        <div class="glass-card testimonial-card reveal" style="padding: 3rem;">
+          <p class="t-text" style="font-size: 1.25rem;">
+            "We were completely stuck with high storage fees and manual PPC campaigns on Amazon. Within 90 days, MarketOps audited our listing keywords, updated our images, and restructured our ad bids. Our ACOS dropped from 48% to 18%, and sales have tripled."
+          </p>
+          <div class="t-author">
+            <div class="t-avatar" style="border-color: var(--accent-green); color: var(--accent-green);">AK</div>
+            <div>
+              <h4 class="t-name">Anand Kulkarni</h4>
+              <p class="t-role">CEO, Kulkarni Consumer Labs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion FAQs for specific Service -->
+  <section class="section" style="background-color: var(--soft-background); border-top: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head reveal" style="text-align: center; margin-left: auto; margin-right: auto;">
+        <span class="section-tag">Answering Your Questions</span>
+        <h2 class="section-title">Ecommerce Operations FAQs</h2>
+        <p class="section-subtitle">Everything you need to know about channel onboarding, integrations, and fee structures.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Which marketplaces does MarketOps support and manage?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>We provide full-channel management for major platforms including Amazon, Flipkart, Myntra, Meesho, along with quick-commerce systems like Blinkit, Zepto, and Instamart. We handle localized catalog mappings for each specific channel requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you handle pricing strategy and Amazon Buy Box hijackers?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>Our algorithms track Buy Box percentages 24/7. When a reseller hijacks your listings, our legal team files a brand registry complaint immediately while our dynamic pricing engine adjusts coordinates automatically to retain the Buy Box.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What fee structure does MarketOps charge for marketplace scaling?</span>
+            <div class="faq-icon-box"><i data-lucide="chevron-down"></i></div>
+          </div>
+          <div class="faq-answer">
+            <p>We work on a standard monthly base management retainer coupled with a percentage share of net revenue growth. This ensures that our teams are strictly motivated to grow your margins and total order volumes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="container reveal">
+    <div class="cta-section">
+      <div class="cta-bg"></div>
+      <div class="cta-glow-ring"></div>
+      <div class="cta-content">
+        <h2 class="cta-title">Are You Ready to <span>Grow Your Store?</span></h2>
+        <p class="cta-desc">
+          Receive a highly actionable catalog optimization roadmap and ad audit from our senior marketplace architects for free today.
+        </p>
+        <a href="contact.html" class="btn btn-lime">Schedule Marketplace Strategy Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-dot"></span>
+            MarketOps
+          </a>
+          <p class="footer-tagline">
+            Systematic physical and digital omnichannel scaling models for high-end modern consumer brands.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-circle" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-circle" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Capability Nodes</h4>
+          <ul class="footer-links">
+            <li><a href="ecommerce.html" class="footer-link">Ecommerce Solutions</a></li>
+            <li><a href="performance-marketing.html" class="footer-link">Performance Marketing</a></li>
+            <li><a href="website-development.html" class="footer-link">Web Development</a></li>
+            <li><a href="seo.html" class="footer-link">SEO Dominance</a></li>
+            <li><a href="marketing-creative.html" class="footer-link">Creative Assets</a></li>
+            <li><a href="overseas-business.html" class="footer-link">Global Expansion</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Agency Details</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">Leadership & Story</a></li>
+            <li><a href="services.html" class="footer-link">All Growth Services</a></li>
+            <li><a href="case-studies.html" class="footer-link">Case Research Library</a></li>
+            <li><a href="contact.html" class="footer-link">Onboarding Hub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Growth Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Careers <span style="font-size: 0.75rem; color: var(--accent-green);">[WE ARE HIRING]</span></a></li>
+            <li><a href="#" class="footer-link">Affiliate Model</a></li>
+            <li><a href="#" class="footer-link">Ecom Academy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Direct Connection</h4>
+          <div class="footer-contact-info">
+            <p>Available 24/7 for Enterprise partners.</p>
+            <p><i data-lucide="mail" style="display:inline-block; width:14px; margin-right:4px;"></i> <a href="mailto:connect@marketops.in">connect@marketops.in</a></p>
+            <p><i data-lucide="message-square" style="display:inline-block; width:14px; margin-right:4px;"></i> <a href="https://wa.me/919424995426" target="_blank">Chat with Growth Advisor</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MarketOps Marketing Solutions Private Limited. All licensing coordinates strictly observed.</p>
+        <div class="footer-bottom-links">
+          <a href="policy.html" class="footer-bottom-link">Privacy Policy</a>
+          <a href="policy.html" class="footer-bottom-link">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

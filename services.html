@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#020203" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Services | MarketOps Marketing Solutions</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Cursor Glow Effect -->
+  <div id="cursor-glow" class="cursor-glow"></div>
+
+  <!-- Background Animated Blur Orbs -->
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Loading Animation Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Sticky Header Navbar -->
+  <header id="header" class="header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="index.html" class="logo">
+          <span class="logo-dot"></span>
+          MarketOps
+        </a>
+        
+        <nav>
+          <ul id="nav-menu" class="nav-menu">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item-dropdown">
+              <a href="services.html" class="nav-link dropdown-toggle">Services <i data-lucide="chevron-down" class="dropdown-icon"></i></a>
+              <ul class="dropdown-menu">
+                <li><a href="ecommerce.html" class="dropdown-link">Ecommerce Solutions</a></li>
+                <li><a href="performance-marketing.html" class="dropdown-link">Performance Marketing</a></li>
+                <li><a href="website-development.html" class="dropdown-link">Website & Development</a></li>
+                <li><a href="seo.html" class="dropdown-link">SEO Optimization</a></li>
+                <li><a href="marketing-creative.html" class="dropdown-link">Marketing Creative</a></li>
+                <li><a href="overseas-business.html" class="dropdown-link">Overseas Business Dev</a></li>
+              </ul>
+            </li>
+            <li><a href="case-studies.html" class="nav-link">Case Studies</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="md:hidden mt-4">
+              <a href="contact.html" class="btn btn-primary w-full">Book Free Consultation</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="contact.html" class="btn btn-primary">Book Free Consultation</a>
+          <button id="hamburger" class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <div class="about-hero-text reveal">
+        <span class="section-tag">Direct Growth Frameworks</span>
+        <h1 class="hero-title">Core Performance <span>Engines</span></h1>
+        <p class="hero-desc" style="max-width: 800px; margin: 0 auto;">
+          Our services represent fully integrated channels. We don't build isolated campaigns; we engineer entire customer acquisition and retention architectures from initial touchpoint down to final order delivery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Services Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="services-grid">
+        <!-- 1. Ecommerce Solutions -->
+        <div class="glass-card service-card reveal" style="padding: 3rem;">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="shopping-cart"></i></div>
+            <h2 class="sc-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Ecommerce Solutions</h2>
+            <p class="sc-desc" style="font-size: 1rem;">
+              Comprehensive, scalable infrastructure management. We manage marketplace listings, physical inventory strategy, custom pricing, reviews, and high-yielding ads on Amazon, Blinkit, Instamart, Zepto, and Myntra.
+            </p>
+          </div>
+          <a href="ecommerce.html" class="sc-link" style="font-size: 1.05rem;">Explore Full Solution <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 2. Performance Marketing -->
+        <div class="glass-card service-card reveal" style="padding: 3rem;">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="line-chart"></i></div>
+            <h2 class="sc-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Performance Marketing</h2>
+            <p class="sc-desc" style="font-size: 1rem;">
+              Hyper-efficient ad campaigns driven by deep user modeling. We build and scale media purchases across Google, Meta, LinkedIn, and YouTube with a focus on lowest possible Cost Per Acquisition (CPA) and maximal blended ROI.
+            </p>
+          </div>
+          <a href="performance-marketing.html" class="sc-link" style="font-size: 1.05rem;">Explore Full Solution <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 3. Website Development -->
+        <div class="glass-card service-card reveal" style="padding: 3rem;">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="code-2"></i></div>
+            <h2 class="sc-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Website Development</h2>
+            <p class="sc-desc" style="font-size: 1rem;">
+              Fast, high-performance web development. We design custom code solutions, WooCommerce layouts, or high-end headless Shopify setups mapped to convert maximum traffic and retain strong backends under sudden massive scale.
+            </p>
+          </div>
+          <a href="website-development.html" class="sc-link" style="font-size: 1.05rem;">Explore Full Solution <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 4. SEO (Search Engine Optimization) -->
+        <div class="glass-card service-card reveal" style="padding: 3rem;">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="search-code"></i></div>
+            <h2 class="sc-title" style="font-size: 1.5rem; margin-bottom: 1rem;">SEO Optimization</h2>
+            <p class="sc-desc" style="font-size: 1rem;">
+              A programmatic approach to technical, semantic, and transactional search placements on Google. Build evergreen organic pipelines to capture search intent and bypass rising pay-per-click charges.
+            </p>
+          </div>
+          <a href="seo.html" class="sc-link" style="font-size: 1.05rem;">Explore Full Solution <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 5. Marketing Creative -->
+        <div class="glass-card service-card reveal" style="padding: 3rem;">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="images"></i></div>
+            <h2 class="sc-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Marketing Creative</h2>
+            <p class="sc-desc" style="font-size: 1rem;">
+              Psychological visual assets designed directly to capture attention, communicate core USP within three seconds, and trigger instantaneous conversion. Covers high-yielding video ads, carousel ads, and brand assets.
+            </p>
+          </div>
+          <a href="marketing-creative.html" class="sc-link" style="font-size: 1.05rem;">Explore Full Solution <i data-lucide="arrow-right"></i></a>
+        </div>
+
+        <!-- 6. Overseas Business Development -->
+        <div class="glass-card service-card reveal" style="padding: 3rem;">
+          <div class="sc-header">
+            <div class="sc-icon"><i data-lucide="globe-2"></i></div>
+            <h2 class="sc-title" style="font-size: 1.5rem; margin-bottom: 1rem;">Overseas Development</h2>
+            <p class="sc-desc" style="font-size: 1rem;">
+              Expand your operational border footprint. Leverage our global merchant connections, regional consumer research models, international shipping integrations, and localized marketing to drive instant cross-border sales.
+            </p>
+          </div>
+          <a href="overseas-business.html" class="sc-link" style="font-size: 1.05rem;">Explore Full Solution <i data-lucide="arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process & Framework Section -->
+  <section class="section" style="background-color: var(--soft-background); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="section-head reveal text-center" style="margin-left: auto; margin-right: auto; text-align: center;">
+        <span class="section-tag">How We Scale</span>
+        <h2 class="section-title">The MarketOps Operational Protocol</h2>
+        <p class="section-subtitle">A highly optimized five-stage launch sequence engineered for maximum precision.</p>
+      </div>
+
+      <div class="about-features">
+        <div class="glass-card reveal">
+          <span style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--accent-green); display: block; margin-bottom: 0.5rem;">01</span>
+          <h3 class="benefit-title">Audit & Margin Modeling</h3>
+          <p class="why-desc">We map your unit economics, physical stock lead times, ad margins, and catalog gaps to build a profit blueprint.</p>
+        </div>
+
+        <div class="glass-card reveal">
+          <span style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--accent-cyan); display: block; margin-bottom: 0.5rem;">02</span>
+          <h3 class="benefit-title">Asset Deployment</h3>
+          <p class="why-desc">Our design and dev squad builds custom websites, listing layouts, and highly targeting creative assets.</p>
+        </div>
+
+        <div class="glass-card reveal">
+          <span style="font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--accent-lime); display: block; margin-bottom: 0.5rem;">03</span>
+          <h3 class="benefit-title">Launch & Arbitrage</h3>
+          <p class="why-desc">We deploy across Google, Meta, and marketplaces, optimizing bids dynamically using platform APIs to grab maximum traffic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="container reveal">
+    <div class="cta-section">
+      <div class="cta-bg"></div>
+      <div class="cta-glow-ring"></div>
+      <div class="cta-content">
+        <h2 class="cta-title">Receive Your Free custom <span>Growth Proposal</span></h2>
+        <p class="cta-desc">
+          Tell us about your brand's bottlenecks. Our analytics leads will outline a complete map targeting competitor weaknesses and PPC channels.
+        </p>
+        <a href="contact.html" class="btn btn-lime">Claim Free Performance Proposal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <span class="logo-dot"></span>
+            MarketOps
+          </a>
+          <p class="footer-tagline">
+            Systematic physical and digital omnichannel scaling models for high-end modern consumer brands.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="social-circle" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-circle" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Our Capability Nodes</h4>
+          <ul class="footer-links">
+            <li><a href="ecommerce.html" class="footer-link">Ecommerce Solutions</a></li>
+            <li><a href="performance-marketing.html" class="footer-link">Performance Marketing</a></li>
+            <li><a href="website-development.html" class="footer-link">Web Development</a></li>
+            <li><a href="seo.html" class="footer-link">SEO Dominance</a></li>
+            <li><a href="marketing-creative.html" class="footer-link">Creative Assets</a></li>
+            <li><a href="overseas-business.html" class="footer-link">Global Expansion</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Agency Details</h4>
+          <ul class="footer-links">
+            <li><a href="about.html" class="footer-link">Leadership & Story</a></li>
+            <li><a href="services.html" class="footer-link">All Growth Services</a></li>
+            <li><a href="case-studies.html" class="footer-link">Case Research Library</a></li>
+            <li><a href="contact.html" class="footer-link">Onboarding Hub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Growth Resources</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Careers <span style="font-size: 0.75rem; color: var(--accent-green);">[WE ARE HIRING]</span></a></li>
+            <li><a href="#" class="footer-link">Affiliate Model</a></li>
+            <li><a href="#" class="footer-link">Ecom Academy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Direct Connection</h4>
+          <div class="footer-contact-info">
+            <p>Available 24/7 for Enterprise partners.</p>
+            <p><i data-lucide="mail" style="display:inline-block; width:14px; margin-right:4px;"></i> <a href="mailto:connect@marketops.in">connect@marketops.in</a></p>
+            <p><i data-lucide="message-square" style="display:inline-block; width:14px; margin-right:4px;"></i> <a href="https://wa.me/919424995426" target="_blank">Chat with Growth Advisor</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 MarketOps Marketing Solutions Private Limited. All licensing coordinates strictly observed.</p>
+        <div class="footer-bottom-links">
+          <a href="policy.html" class="footer-bottom-link">Privacy Policy</a>
+          <a href="policy.html" class="footer-bottom-link">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./script.js"></script>
+</body>
+</html>

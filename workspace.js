@@ -542,7 +542,12 @@ function initWorkspaceHub() {
   // --- Wire UI Interaction Actions ---
   const modalToggle = () => backdrop.classList.toggle('active');
   launcher.addEventListener('click', modalToggle);
-  document.getElementById('close-workspace-hub').addEventListener('click', modalToggle);
+  
+  const closeHubBtn = document.getElementById('close-workspace-hub');
+  if (closeHubBtn) {
+    closeHubBtn.addEventListener('click', modalToggle);
+  }
+  
   backdrop.addEventListener('click', (e) => {
     if (e.target === backdrop) modalToggle();
   });
@@ -553,20 +558,22 @@ function initWorkspaceHub() {
   const panelGmail = document.getElementById('panel-gmail');
   const panelFirestore = document.getElementById('panel-firestore');
 
-  tabGmail.addEventListener('click', () => {
-    tabGmail.classList.add('active');
-    tabFirestore.classList.remove('active');
-    panelGmail.style.display = 'block';
-    panelFirestore.style.display = 'none';
-  });
+  if (tabGmail && tabFirestore && panelGmail && panelFirestore) {
+    tabGmail.addEventListener('click', () => {
+      tabGmail.classList.add('active');
+      tabFirestore.classList.remove('active');
+      panelGmail.style.display = 'block';
+      panelFirestore.style.display = 'none';
+    });
 
-  tabFirestore.addEventListener('click', () => {
-    tabFirestore.classList.add('active');
-    tabGmail.classList.remove('active');
-    panelGmail.style.display = 'none';
-    panelFirestore.style.display = 'block';
-    loadFirestoreInquiries();
-  });
+    tabFirestore.addEventListener('click', () => {
+      tabFirestore.classList.add('active');
+      tabGmail.classList.remove('active');
+      panelGmail.style.display = 'none';
+      panelFirestore.style.display = 'block';
+      loadFirestoreInquiries();
+    });
+  }
 
   let authViewMode = 'signin'; // 'signin', 'signup', 'forgot'
 
@@ -867,11 +874,382 @@ function initWorkspaceHub() {
     }
   }
 
+  // --- Front Page Partner Gateway Portal Support ---
+  let frontAuthViewMode = 'signin'; // 'signin', 'signup', 'forgot'
+
+  function renderFrontAuthForm(userToCheck) {
+    const frontCard = document.getElementById('front-auth-card');
+    if (!frontCard) return; // Not on the front/index page
+
+    const user = userToCheck || auth.currentUser;
+    if (user) {
+      
+      frontCard.innerHTML = `
+        <div style="text-align: center;">
+          <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
+            <img src="${user.photoURL || 'https://lh3.googleusercontent.com/a/default-user'}" style="width: 84px; height: 84px; border-radius: 50%; border: 2.5px solid var(--accent-cyan); object-fit: cover; box-shadow: 0 0 25px rgba(0, 229, 255, 0.25);" alt="Partner Node" />
+            <div style="position: absolute; bottom: 0; right: 0; background: var(--accent-green); width: 22px; height: 22px; border-radius: 50%; border: 3px solid #000; box-shadow: 0 0 10px rgba(0, 245, 132, 0.5);" title="Identity Verified & Secured"></div>
+          </div>
+          
+          <span style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent-cyan); font-weight: 800; display: block; margin-bottom: 0.35rem; font-family: var(--font-sans);">Authorized Partner Node</span>
+          <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: #fff; font-weight: 800; margin: 0 0 0.4rem 0; letter-spacing: -0.02em;">
+            ${user.displayName || 'Enterprise Lead'}
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; font-family: var(--font-sans); word-break: break-all;">
+            ${user.email}
+          </p>
+
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 18px; padding: 1.25rem; margin-bottom: 1.75rem; text-align: left; backdrop-filter: blur(5px);">
+            <h4 style="font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-display);">
+              <i data-lucide="radio" style="width: 14px; color: var(--accent-green); animation: pulse 2s infinite;"></i> System Connection Stream
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 0.55rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span>Security State:</span>
+                <span style="color: var(--accent-green); font-weight: 700; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 4px;"><span style="width:6px; height:6px; background:var(--accent-green); border-radius:50%; display:inline-block;"></span>SECURED</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span>Provider Node:</span>
+                <span style="color: var(--accent-cyan); font-weight: 700;">${user.providerData[0]?.providerId === 'google.com' ? 'Google Workspace' : 'MarketOps Email'}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span>Identity Hash:</span>
+                <span style="color: #fff; opacity: 0.75;">${user.uid.substring(0, 12)}...</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+            <button class="hub-auth-btn" id="front-action-open-hub" style="background: linear-gradient(135deg, var(--accent-cyan), var(--accent-green)); color: #010403; font-weight: 800; text-shadow: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+              <i data-lucide="layout-dashboard" style="width: 16px;"></i> Launch Control Panel
+            </button>
+            <button id="front-action-logout" style="background: none; border: 1px solid rgba(255,77,77,0.2); color: #ff4d4d; border-radius: 12px; padding: 0.8rem 1rem; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 8px;" onmouseover="this.style.background='rgba(255,77,77,0.08)', this.style.borderColor='rgba(255,77,77,0.4)'" onmouseout="this.style.background='none', this.style.borderColor='rgba(255,77,77,0.2)'">
+              <i data-lucide="log-out" style="width: 15px;"></i> Terminate Session
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('front-action-open-hub').addEventListener('click', () => {
+        backdrop.classList.add('active');
+      });
+
+      document.getElementById('front-action-logout').addEventListener('click', async () => {
+        if (confirm('Sign out of your MarketOps partner dashboard?')) {
+          await signOut(auth);
+          cachedAccessToken = null;
+        }
+      });
+
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+      return;
+    }
+
+    let formHtml = '';
+
+    if (frontAuthViewMode === 'forgot') {
+      formHtml = `
+        <div>
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; letter-spacing: -0.02em;">
+            <i data-lucide="key-round" style="color: var(--accent-cyan); width: 22px; height: 22px;"></i> Security Reset
+          </h3>
+          <p class="why-desc" style="font-size:0.85rem; margin-bottom:1.5rem; line-height:1.5; color:var(--text-muted);">Enter your email below. We will securely dispatch a confidential password reset link to your mailbox.</p>
+          
+          <div class="hub-auth-error" id="front-auth-error-block"></div>
+          <div class="hub-auth-success" id="front-auth-success-block"></div>
+          
+          <form class="hub-auth-form" id="front-forgot-form">
+            <div class="hub-auth-input-group">
+              <label class="hub-auth-label" for="front-forgot-email">Email Address</label>
+              <input type="email" id="front-forgot-email" class="hub-auth-input" placeholder="name@company.com" required autocomplete="email" />
+            </div>
+            <button type="submit" class="hub-auth-btn" id="front-forgot-submit-btn">Send Reset Link</button>
+          </form>
+
+          <p style="font-size:0.82rem; margin-top:1.5rem; text-align:center; color:var(--text-muted); line-height:1.4;">
+            Remembered your password? <button class="hub-auth-toggle-link" id="front-go-to-signin">Sign In</button>
+          </p>
+        </div>
+      `;
+    } else if (frontAuthViewMode === 'signup') {
+      formHtml = `
+        <div>
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; letter-spacing: -0.02em;">
+            <i data-lucide="user-plus" style="color: var(--accent-green); width: 22px; height: 22px;"></i> Partner Registration
+          </h3>
+          <p class="why-desc" style="font-size:0.85rem; margin-bottom:1.25rem; line-height:1.5; color:var(--text-muted);">Create a secure accounts coordinate to log your on-demand inquiries and track digital metrics in real-time.</p>
+          
+          <div class="hub-auth-error" id="front-auth-error-block"></div>
+          <div class="hub-auth-success" id="front-auth-success-block"></div>
+
+          <form class="hub-auth-form" id="front-signup-form">
+            <div class="hub-auth-input-group">
+              <label class="hub-auth-label" for="front-signup-name">Full Name</label>
+              <input type="text" id="front-signup-name" class="hub-auth-input" placeholder="Gaurav Singh" required autocomplete="name" />
+            </div>
+            <div class="hub-auth-input-group">
+              <label class="hub-auth-label" for="front-signup-email">Email Address</label>
+              <input type="email" id="front-signup-email" class="hub-auth-input" placeholder="name@company.com" required autocomplete="email" />
+            </div>
+            <div class="hub-auth-input-group">
+              <label class="hub-auth-label" for="front-signup-password">Choose Password</label>
+              <input type="password" id="front-signup-password" class="hub-auth-input" placeholder="••••••••" required autocomplete="new-password" minlength="6" />
+            </div>
+            <button type="submit" class="hub-auth-btn" id="front-signup-submit-btn" style="background: var(--accent-green);">Register Secure Account</button>
+          </form>
+
+          <div class="hub-auth-divider">Or use workspace provider</div>
+
+          <button class="gsi-button" id="front-google-login-btn">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+            </svg>
+            <span>Sign in with Google</span>
+          </button>
+
+          <p style="font-size:0.82rem; margin-top:1.5rem; text-align:center; color:var(--text-muted); line-height:1.4;">
+            Existing partner? <button class="hub-auth-toggle-link" id="front-go-to-signin">Sign In Here</button>
+          </p>
+        </div>
+      `;
+    } else {
+      formHtml = `
+        <div>
+          <h3 style="font-family: var(--font-display); font-weight: 800; font-size: 1.5rem; color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; letter-spacing: -0.02em;">
+            <i data-lucide="lock" style="color: var(--accent-cyan); width: 22px; height: 22px;"></i> Partner Login
+          </h3>
+          <p class="why-desc" style="font-size:0.85rem; margin-bottom:1.25rem; line-height:1.5; color:var(--text-muted);">Securely authenticate using your partner coordinate credentials to sync RFP reports and workspace tools.</p>
+          
+          <div class="hub-auth-error" id="front-auth-error-block"></div>
+          <div class="hub-auth-success" id="front-auth-success-block"></div>
+
+          <form class="hub-auth-form" id="front-signin-form">
+            <div class="hub-auth-input-group">
+              <label class="hub-auth-label" for="front-signin-email">Email Address</label>
+              <input type="email" id="front-signin-email" class="hub-auth-input" placeholder="name@company.com" required autocomplete="email" />
+            </div>
+            <div class="hub-auth-input-group">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <label class="hub-auth-label" for="front-signin-password">Password</label>
+                <button type="button" class="hub-auth-toggle-link" id="front-go-to-forgot" style="font-size:0.75rem;">Forgot Password?</button>
+              </div>
+              <input type="password" id="front-signin-password" class="hub-auth-input" placeholder="••••••••" required autocomplete="current-password" />
+            </div>
+            <button type="submit" class="hub-auth-btn" id="front-signin-submit-btn">Sign In Securely</button>
+          </form>
+
+          <div class="hub-auth-divider">Or use workspace provider</div>
+
+          <button class="gsi-button" id="front-google-login-btn">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
+            </svg>
+            <span>Sign in with Google</span>
+          </button>
+
+          <p style="font-size:0.82rem; margin-top:1.5rem; text-align:center; color:var(--text-muted); line-height:1.4;">
+            New partner? <button class="hub-auth-toggle-link" id="front-go-to-signup">Register Account</button>
+          </p>
+        </div>
+      `;
+    }
+
+    frontCard.innerHTML = formHtml;
+    bindFrontAuthUiEvents();
+  }
+
+  function bindFrontAuthUiEvents() {
+    const toSignin = document.getElementById('front-go-to-signin');
+    if (toSignin) {
+      toSignin.addEventListener('click', (e) => {
+        e.preventDefault();
+        frontAuthViewMode = 'signin';
+        renderFrontAuthForm();
+      });
+    }
+
+    const toSignup = document.getElementById('front-go-to-signup');
+    if (toSignup) {
+      toSignup.addEventListener('click', (e) => {
+        e.preventDefault();
+        frontAuthViewMode = 'signup';
+        renderFrontAuthForm();
+      });
+    }
+
+    const toForgot = document.getElementById('front-go-to-forgot');
+    if (toForgot) {
+      toForgot.addEventListener('click', (e) => {
+        e.preventDefault();
+        frontAuthViewMode = 'forgot';
+        renderFrontAuthForm();
+      });
+    }
+
+    const loginBtn = document.getElementById('front-google-login-btn');
+    if (loginBtn) {
+      loginBtn.addEventListener('click', async () => {
+        if (isSigningIn) return;
+        isSigningIn = true;
+        const errorBlock = document.getElementById('front-auth-error-block');
+        if (errorBlock) errorBlock.style.display = 'none';
+
+        try {
+          const result = await signInWithPopup(auth, provider);
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          cachedAccessToken = credential?.accessToken;
+          console.log('Firebase and Google workspace approved from front page.');
+        } catch (err) {
+          console.error('Google Sign-In failed from front page:', err);
+          if (errorBlock) {
+             errorBlock.textContent = `Google Sign-In failed or was cancelled.`;
+             errorBlock.style.display = 'block';
+          }
+        } finally {
+          isSigningIn = false;
+        }
+      });
+    }
+
+    const signinForm = document.getElementById('front-signin-form');
+    if (signinForm) {
+      signinForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('front-signin-email').value.trim();
+        const password = document.getElementById('front-signin-password').value;
+        const submitBtn = document.getElementById('front-signin-submit-btn');
+        const errorBlock = document.getElementById('front-auth-error-block');
+
+        if (errorBlock) errorBlock.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Verifying credentials...';
+
+        try {
+          await signInWithEmailAndPassword(auth, email, password);
+        } catch (err) {
+          console.error('Email sign in failure from front page:', err);
+          if (errorBlock) {
+            let userFriendlyMsg = err.message;
+            if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
+              userFriendlyMsg = 'Invalid email address or key coordinates. Please verify your details.';
+            } else if (err.code === 'auth/invalid-email') {
+              userFriendlyMsg = 'The email address format is invalid.';
+            }
+            errorBlock.textContent = userFriendlyMsg;
+            errorBlock.style.display = 'block';
+          }
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Sign In Securely';
+          }
+        }
+      });
+    }
+
+    const signupForm = document.getElementById('front-signup-form');
+    if (signupForm) {
+      signupForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('front-signup-name').value.trim();
+        const email = document.getElementById('front-signup-email').value.trim();
+        const password = document.getElementById('front-signup-password').value;
+        const submitBtn = document.getElementById('front-signup-submit-btn');
+        const errorBlock = document.getElementById('front-auth-error-block');
+        const successBlock = document.getElementById('front-auth-success-block');
+
+        if (errorBlock) errorBlock.style.display = 'none';
+        if (successBlock) successBlock.style.display = 'none';
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Registering coordinates...';
+
+        try {
+          const userCred = await createUserWithEmailAndPassword(auth, email, password);
+          await updateProfile(userCred.user, { displayName: name });
+          if (successBlock) {
+            successBlock.textContent = 'Secure Account registered! Welcome to the Partner workspace.';
+            successBlock.style.display = 'block';
+          }
+        } catch (err) {
+          console.error('Email sign up failure from front page:', err);
+          if (errorBlock) {
+            let userFriendlyMsg = err.message;
+            if (err.code === 'auth/email-already-in-use') {
+              userFriendlyMsg = 'This email coordinate is already associated with an account.';
+            } else if (err.code === 'auth/weak-password') {
+              userFriendlyMsg = 'The chosen key is too weak. Must be at least 6 characters.';
+            }
+            errorBlock.textContent = userFriendlyMsg;
+            errorBlock.style.display = 'block';
+          }
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Register Secure Account';
+          }
+        }
+      });
+    }
+
+    const forgotForm = document.getElementById('front-forgot-form');
+    if (forgotForm) {
+      forgotForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = document.getElementById('front-forgot-email').value.trim();
+        const submitBtn = document.getElementById('front-forgot-submit-btn');
+        const errorBlock = document.getElementById('front-auth-error-block');
+        const successBlock = document.getElementById('front-auth-success-block');
+
+        if (errorBlock) errorBlock.style.display = 'none';
+        if (successBlock) successBlock.style.display = 'none';
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Dispatching link...';
+
+        try {
+          await sendPasswordResetEmail(auth, email);
+          if (successBlock) {
+            successBlock.textContent = 'A secure password recovery hyperlink has been transmitted.';
+            successBlock.style.display = 'block';
+          }
+          document.getElementById('front-forgot-email').value = '';
+        } catch (err) {
+          console.error('Forgot password link failure from front page:', err);
+          if (errorBlock) {
+            let userFriendlyMsg = err.message;
+            if (err.code === 'auth/user-not-found') {
+              userFriendlyMsg = 'No registered partner matches this email address.';
+            }
+            errorBlock.textContent = userFriendlyMsg;
+            errorBlock.style.display = 'block';
+          }
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Send Reset Link';
+          }
+        }
+      });
+    }
+
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }
+
   // Track state changes
   onAuthStateChanged(auth, async (user) => {
     const authSection = document.getElementById('hub-auth-section');
     const contentSection = document.getElementById('hub-content-section');
     const badge = document.getElementById('hub-badge');
+
+    // Trigger front page rendering state
+    renderFrontAuthForm(user);
 
     if (user) {
       badge.style.display = 'none';
@@ -917,10 +1295,16 @@ function initWorkspaceHub() {
   });
 
   // Wire Refresh
-  document.getElementById('refresh-gmail').addEventListener('click', loadGmailInbox);
+  const refreshGmailBtn = document.getElementById('refresh-gmail');
+  if (refreshGmailBtn) {
+    refreshGmailBtn.addEventListener('click', loadGmailInbox);
+  }
 
   // Wire RFP Send Button
-  document.getElementById('send-gmail-btn').addEventListener('click', sendGmailMessage);
+  const sendEmailBtn = document.getElementById('send-gmail-btn');
+  if (sendEmailBtn) {
+    sendEmailBtn.addEventListener('click', sendGmailMessage);
+  }
 }
 
 // --- Gmail: Load Recent Inbox Messages ---

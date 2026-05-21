@@ -4,15 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Global Loader ---
   const loader = document.getElementById('loader');
   if (loader) {
-    window.addEventListener('load', () => {
+    const hideLoader = () => {
       setTimeout(() => {
         loader.classList.add('hidden');
-      }, 550);
-    });
-    // Fallback: hide loader anyway if window takes too long to load
-    setTimeout(() => {
-      loader.classList.add('hidden');
-    }, 3000);
+      }, 350);
+    };
+
+    if (document.readyState === 'complete') {
+      hideLoader();
+    } else {
+      window.addEventListener('load', hideLoader);
+      // Fast fallback to guarantee working site responsiveness
+      setTimeout(hideLoader, 1200);
+    }
   }
 
   // --- Initialize Lucide Icons ---
